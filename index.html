@@ -7,7 +7,8 @@
     <style>
         @font-face {
             font-family: 'AnimalCrossing';
-            src: url('/fonts/FinkHeavy.ttf') format('truetype'); /* Adjust if using .woff */
+            src: url('/fonts/FinkHeavy.woff2') format('woff2'),
+                 url('/fonts/FinkHeavy.woff') format('woff');
             font-weight: normal;
             font-style: normal;
         }
@@ -26,11 +27,11 @@
             display: inline-block;
         }
         h1 {
-            font-family: 'AnimalCrossing', Arial, sans-serif;
+            font-family: 'AnimalCrossing', sans-serif;
             font-size: 2.5em;
         }
         p {
-            font-family: 'AnimalCrossing', Arial, sans-serif;
+            font-family: 'AnimalCrossing', sans-serif;
             font-size: 1.2em;
         }
         .love-button {
