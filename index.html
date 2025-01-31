@@ -32,14 +32,62 @@
             box-shadow: 0px 0px 10px gray;
             display: inline-block;
         }
-        .letter-container {
-            position: relative;
+        /* Flip Card Container */
+        .flip-card {
+            background-color: transparent;
             width: 450px;
             height: 272px;
+            perspective: 1000px;
+            margin: 0 auto 20px auto;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        /* Front & Back Side */
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        /* Front of the Card */
+        .flip-card-front {
+            background: url('https://dodo.ac/np/images/thumb/6/69/Airmail_Card_NH.png/640px-Airmail_Card_NH.png') no-repeat center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        /* Click Me Text */
+        .click-me {
+            background: rgba(255, 255, 255, 0.8);
+            color: #d63384;
+            font-family: 'AnimalCrossingBody';
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px gray;
+            transition: transform 0.2s ease-in-out, background 0.3s;
+        }
+        .click-me:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+        /* Back of the Card (Letter) */
+        .flip-card-back {
             background: url('https://dodo.ac/np/images/a/ab/Lovely_Hearts_Card_NH.png') no-repeat center;
             background-size: cover;
-            border-radius: 15px;
-            margin: 0 auto 20px auto;
+            transform: rotateY(180deg);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -93,16 +141,31 @@
 <body>
     <div class="container">
         <h1>365 Days of Pookers Later...</h1>
-        <div class="letter-container">
-            <div class="letter-text">
-                Dear Jules,<br>
-                As we celebrate our first trip around the Sun,<br>Here are some memories from our journey so far.<br>
-                Happy Anniversary!<br>
-                Love, Ky
+        
+        <!-- Flip Card -->
+        <div class="flip-card" onclick="flipCard()">
+            <div class="flip-card-inner">
+                <!-- Front Side -->
+                <div class="flip-card-front">
+                    <div class="click-me">Click Me!</div>
+                </div>
+                <!-- Back Side -->
+                <div class="flip-card-back">
+                    <div class="letter-text">
+                        Dear Jules,<br>
+                        As we celebrate our first trip around the Sun,<br>
+                        Here are some memories from our journey so far.<br>
+                        Happy Anniversary!<br>
+                        Love, Ky
+                    </div>
+                </div>
             </div>
         </div>
+
         <img src="https://pngimg.com/uploads/snoopy/snoopy_PNG98.png" alt="Snoopert">
         <br>
+
+        <!-- Buttons -->
         <div class="button-container">
             <a href="https://your-second-link.com" class="love-button">
                 Pooker Photos
@@ -111,7 +174,13 @@
                 2024 Wrapped (Pookers' Version)
             </a>
         </div>
-        
     </div>
+
+    <!-- JavaScript for Flip Effect -->
+    <script>
+        function flipCard() {
+            document.querySelector(".flip-card").classList.toggle("flipped");
+        }
+    </script>
 </body>
 </html>
