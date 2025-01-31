@@ -61,9 +61,13 @@
             font-family: 'AnimalCrossingBody';
             font-size: 0.8em;
         }
-        .love-button {
-            display: inline-block;
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
             margin-top: 20px;
+        }
+        .love-button {
             padding: 10px 20px;
             font-size: 1.2em;
             color: white;
@@ -92,14 +96,22 @@
         <div class="letter-container">
             <div class="letter-text">
                 Dear Jules,<br>
-                As we celebrate our first trip around the Sun, <br> Here's a look at some of our best moments so far.<br>
-                Happy Anniversary! ❤️ <br>
+                As we celebrate our first trip around the Sun,<br>Here's a look at some of our best moments so far.<br>
+                Happy Anniversary!<br>
                 Love, Ky
             </div>
         </div>
         <img src="https://pngimg.com/uploads/snoopy/snoopy_PNG98.png" alt="Snoopert">
         <br>
-        <a href="https://open.spotify.com/playlist/1ZNt82U2I0NoWAV62HfmtD?si=16d3cb11993a456f" class="love-button">2024 Wrapped (Pookers' Version)</a>
+        <div class="button-container">
+            <a href="https://open.spotify.com/playlist/1ZNt82U2I0NoWAV62HfmtD?si=16d3cb11993a456f" class="love-button">
+                2024 Wrapped (Pookers' Version)
+            </a>
+            <a href="https://your-second-link.com" class="love-button">
+                Pooker Photos
+            </a>
+        </div>
+        
     </div>
 </body>
 </html>
