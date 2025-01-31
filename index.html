@@ -39,12 +39,10 @@
             height: 272px;
             perspective: 1000px;
             margin: 0 auto 20px auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            position: relative;
         }
         .flip-card-inner {
-            position: relative;
+            position: absolute;
             width: 100%;
             height: 100%;
             transform-style: preserve-3d;
@@ -72,7 +70,6 @@
         }
         /* Click Me Text */
         .click-me {
-            background: rgba(255, 255, 255, 0.8);
             color: #d63384;
             font-family: 'AnimalCrossingBody';
             font-size: 0.8em;
@@ -81,7 +78,6 @@
             transition: transform 0.2s ease-in-out, background 0.3s;
         }
         .click-me:hover {
-            background: white;
             transform: scale(1.1);
         }
         /* Back of the Card (Letter) */
@@ -183,11 +179,6 @@
         function flipCard() {
             const card = document.querySelector(".flip-card");
             card.classList.toggle("flipped");
-
-            // Ensure card stays aligned
-            setTimeout(() => {
-                card.style.transform = card.classList.contains("flipped") ? "translateY(0)" : "translateY(0)";
-            }, 300);
         }
     </script>
 </body>
