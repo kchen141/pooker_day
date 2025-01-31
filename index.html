@@ -32,6 +32,27 @@
             box-shadow: 0px 0px 10px gray;
             display: inline-block;
         }
+        .letter-container {
+            position: relative;
+            width: 500px;
+            height: 600px;
+            background: url('https://dodo.ac/np/images/a/ab/Lovely_Hearts_Card_NH.png') no-repeat center;
+            background-size: cover;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        .letter-text {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            font-family: 'AnimalCrossingBody';
+            font-size: 1.0em;
+            color: #d63384;
+            line-height: 1.6;
+            max-width: 80%;
+        }
         h1 {
             font-family: 'AnimalCrossingTitle';
             font-size: 3.0em;
@@ -66,11 +87,14 @@
 <body>
     <div class="container">
         <h1>365 Days of Pookers Later...</h1>
-        <p>Dear Jules,<br>
-            As we celebrate our first trip around the Sun, <br> I wanted to look back at some of our best moments so far.<br>
-            Thanks for being the best pooker a pookum could ask for ❤️ <br>
-            Love, Ky
-        </p>
+        <div class="letter-container">
+            <div class="letter-text">
+                Dear Jules,<br>
+                As we celebrate our first trip around the Sun, <br> I wanted to look back at some of our best moments so far.<br>
+                Thanks for being the best pooker a pookum could ask for ❤️ <br>
+                Love, Ky
+            </div>
+        </div>
         <img src="https://pngimg.com/uploads/snoopy/snoopy_PNG98.png" alt="Snoopert">
         <br>
         <a href="https://open.spotify.com/playlist/1ZNt82U2I0NoWAV62HfmtD?si=16d3cb11993a456f" class="love-button">2024 Wrapped (Pookers' Version)</a>
